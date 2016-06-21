@@ -24,10 +24,12 @@ console.error('out_path: ' + out_path);
 // });
 
 // creating an image
-var image = new Jimp(350, 20, function (err, image) {
 
-    Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
-        image.print(font, 10, 0, text_line);
+Jimp.read("sig_bg.png", function (err, image) {
+    if (err) throw err;
+
+    Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
+        image.print(font, 170, 5, text_line);
         image.write(out_path, function(err){
             if(err){
                 console.log("Error: "+ err);
@@ -36,4 +38,5 @@ var image = new Jimp(350, 20, function (err, image) {
 
         });
     });
+
 });
