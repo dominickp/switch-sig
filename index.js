@@ -32,7 +32,7 @@ Jimp.read(appDir+"/sig_bg.png", function (err, image) {
     if (err) throw err;
 
     Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
-        image.print(font, 170, 5, text_line);
+        image.print(font, 120, 1, text_line);
         image.write(out_path, function(err){
             if(err){
                 console.log("Error: "+ err);
