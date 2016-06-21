@@ -25,7 +25,7 @@ console.error('out_path: ' + out_path);
 
 // creating an image
 
-Jimp.read("sig_bg.png", function (err, image) {
+Jimp.read("./sig_bg.png", function (err, image) {
     if (err) throw err;
 
     Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
