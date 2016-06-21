@@ -6,6 +6,9 @@ var fs = require("fs");
 var text_line = argv.text;
 var out_path = argv.path;
 
+var path = require('path');
+var appDir = path.dirname(require.main.filename);
+
 console.error('out_path: ' + out_path);
 
 // Make sure exists
@@ -25,7 +28,7 @@ console.error('out_path: ' + out_path);
 
 // creating an image
 
-Jimp.read("./sig_bg.png", function (err, image) {
+Jimp.read(appDir+"/sig_bg.png", function (err, image) {
     if (err) throw err;
 
     Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
