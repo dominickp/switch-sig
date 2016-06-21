@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gm": "^1.22.0",
+    "jimp": "^0.2.24",
     "yargs": "^4.7.1"
   }
 }

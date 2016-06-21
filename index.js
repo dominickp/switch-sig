@@ -1,19 +1,16 @@
 #!/usr/bin/env node
 var argv = require('yargs').argv;
-var gm = require('gm');
+var Jimp = require("jimp");
 
 var text_line = argv.text;
 var out_path = argv.path;
 
 // creating an image
-gm(350, 20, "#000000")
-    .stroke("#ffffff")
-    .font("Helvetica.ttf", 12)
-    .drawText(10, 12, text_line)
-    .write(out_path, function (err) {
-        if(err){
-            console.log(err);
-        } else {
-            console.log("Success");
-        }
+var image = new Jimp(350, 20, function (err, image) {
+
+    Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
+        image.print(font, 10, 0, text_line);
+        image.write(out_path);
+        console.log("Success");
     });
+});
