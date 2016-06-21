@@ -1,5 +1,1 @@
-brew install imagemagick
-
-brew install graphicsmagick
-
-brew install ghostscript
+Clone and npm install
